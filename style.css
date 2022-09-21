@@ -10,8 +10,7 @@ body{
 
 header{
     color:#FFF;
-    padding-top: 20px;
-    padding-left: 50px;
+    
     background-color: #3347B0;
 
     display: flex;
@@ -19,19 +18,16 @@ header{
 }
 
 .content-container{
-    
     align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
 }
 
-.sair a{
-    display: flex;
-    align-items: center;
-    padding-left: 200px;
-}
 
 main{
     padding-left: 100px;
-    height: 71vh;
+    height: 68vh;
 }
 
 .text-container{
@@ -40,20 +36,19 @@ main{
     font-family: 'Roboto', sans-serif;
     font-size: 85px;
     width: 980px;
-    height: 120px;
-    size: 60px;
-    color: #000;
-}
-
-.text-container1{
-    display: flex;
-    flex-direction: column ;
+    height: 110px;
     
 }
 
-.text2{
+.text-container1{
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.text2 {
+    font-weight: bold;
     color: #3347B0;
-   
 }
 
 .computer{
@@ -66,21 +61,52 @@ main{
 
 .studant{
     height: 560px;
+    padding-left: 50px;
     size: 400px;
     align-items: center;
 }
 
+.cards{
+    text-align: center;
+    color: #FFF;
+    width: 260px;
+    height: 150px;
+   
+}
+
+.DS{
+    background-color: #3347B0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.Redes{
+    background-color: #3347B0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 .footer{
     padding-left: 50px;
+    font-family: 'Roboto', sans-serif;
     color: #FFF;
-    height: 150px;
+    height: 13vh;
     background-color: #3347B0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .links-container{
     color: #FFF;
+    padding-top: 25px;
+    flex-direction: column ; 
+}
+
+.copyright{
+    text-align: center;
 }
 
 
