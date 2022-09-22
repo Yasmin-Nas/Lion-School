@@ -1,3 +1,10 @@
+/*******************************
+ * Objetivo: Obter uma lista de cursos
+ * Data: 22/09/2022
+ * Autor:Yasmin Santos
+ * Versao: 1.0
+ *******************************/
+
 var cursos = [
     {
         "nome"  :   "001 - Técnico em Desenvolvimento de Sistemas",
@@ -12,3 +19,33 @@ var cursos = [
         "carga" :   "1200"
     }
 ];
+
+// Retorna todos os cursos pela sigla
+const getCursos = function(siglaCursos){
+    let sigla = siglaCursos;
+    let listaCursos = [];
+    let erro = true;
+
+    if(typeof(sigla) != 'undefined')
+    {
+        if(sigla != '' && sigla.lenght == 2)
+        {
+            //Percorrer o array de cursos para validar a sigla
+            cursos.forEach(item => {
+                
+                //Localiza a sigla do curso dentro do array 
+                item.cidades.forEach(itemCursos => {
+                    listaCursos.push(itemCursos.nome)
+                    erro = false;
+                })
+            })
+        }
+    }
+    if(erro)
+    return false;
+
+    else
+    return listaCursos;
+}
+
+console.table(getCursos('DS'))

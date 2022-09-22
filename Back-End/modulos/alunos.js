@@ -1,3 +1,10 @@
+/*******************************
+ * Objetivo: Obter uma lista de cursos
+ * Data: 22/09/2022
+ * Autor:Yasmin Santos
+ * Versao: 1.0
+ *******************************/
+
 var alunos = [
      
     {       "foto"  : "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-4-avatar-2754580_120522.png",
@@ -684,3 +691,45 @@ var alunos = [
             "status" : "Cursando"
         }
     ];
+
+const getAlunos = function(){
+    let listaAlunos = [];
+
+    alunos.forEach(item => {
+        listaAlunos.push(item.nome);
+        erro = false;
+    });
+    if(erro)
+    return false;
+
+    else
+    return (listaAlunos);
+}
+ const getCursos = function(nomeAlunos){
+     let nome = nomeAlunos;
+     let alunos = {};
+     let erro = true;
+
+     if(typeof(nome) != 'undefined')
+
+     if(alunos != '' && alunos.lenght == 2)
+        {
+            //Percorrer o array de cursos para validar a sigla
+            alunos.forEach(item => {
+                
+                //Localiza a sigla do curso dentro do array 
+                item.alunos.forEach(itemAunos => {
+                    listaAlunos.push(itemAunos.nome)
+                    erro = false;
+                })
+            })
+        }
+
+        if(erro)
+        return false;
+
+        else
+        return listaAlunos
+ }
+ 
+ console.table(getAlunos(''))
