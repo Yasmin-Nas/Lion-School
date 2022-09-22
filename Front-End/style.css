@@ -10,9 +10,7 @@ body{
 
 header{
     color:#FFF;
-    
     background-color: #3347B0;
-
     display: flex;
     flex-direction: column;
 }
@@ -28,6 +26,7 @@ header{
 main{
     padding-left: 100px;
     height: 68vh;
+    justify-content: space-around;
 }
 
 .text-container{
@@ -36,8 +35,7 @@ main{
     font-family: 'Roboto', sans-serif;
     font-size: 85px;
     width: 980px;
-    height: 110px;
-    
+    height: 110px;  
 }
 
 .text-container1{
@@ -46,46 +44,62 @@ main{
     flex-direction: column;
 }
 
-.text2 {
-    font-weight: bold;
-    color: #3347B0;
+.text{
+    width: 70%;
+    height: 70%;
 }
 
+span{
+    color: #3347B0;
+    font-weight: bold;
+}
 .computer{
     height: 500px;
     align-items: flex-end;
     size: 200px;
     padding-top: 200px;
-    padding-right: 160px;
+    padding-right: 60px;
 }
 
 .studant{
     height: 560px;
-    padding-left: 50px;
-    size: 400px;
+    padding-left: 80px;
+    size: 200px;
     align-items: center;
 }
 
 .cards{
+    background-color: #3347B0;
+    height: 30vh;
+    width: 30vh;
+    font-family:'Roboto', sans-serif;
+    font-weight: 300px;
+    font-size: 45px;
     text-align: center;
     color: #FFF;
-    width: 260px;
-    height: 150px;
-   
+    padding-top: 40px;
 }
 
+
 .DS{
-    background-color: #3347B0;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 150px;
+    height:100px;
+    padding-left: 12px;
+    padding-right: 20px;
 }
 
 .Redes{
-    background-color: #3347B0;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 150px;
+    height:90px;
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-right: 20px;
 }
 
 .footer{
@@ -105,8 +119,17 @@ main{
     flex-direction: column ; 
 }
 
+.email{
+    padding-top: 15px;
+}
+
+.local{
+    padding-top: 10px;
+} 
+
 .copyright{
     text-align: center;
+   
 }
 
 
