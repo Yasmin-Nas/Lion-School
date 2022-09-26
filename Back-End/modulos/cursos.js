@@ -20,32 +20,22 @@ var cursos = [
     }
 ];
 
-// Retorna todos os cursos pela sigla
-const getCursos = function(siglaCursos){
-    let sigla = siglaCursos;
-    let listaCursos = [];
+const getCursos = () => {
+    let curso = [];
     let erro = true;
 
-    if(typeof(sigla) != 'undefined')
-    {
-        if(sigla != '' && sigla.lenght == 2)
-        {
-            //Percorrer o array de cursos para validar a sigla
-            cursos.forEach(item => {
-                
-                //Localiza a sigla do curso dentro do array 
-                item.cidades.forEach(itemCursos => {
-                    listaCursos.push(itemCursos.nome)
-                    erro = false;
-                })
-            })
-        }
-    }
-    if(erro)
-    return false;
+    cursos.forEach(item => {
+        curso.push(item);
+        erro = false;
+    })
 
-    else
-    return listaCursos;
+    if(erro){
+    return false;
+    }else{
+    return curso;
+    }
 }
 
-console.table(getCursos('DS'))
+module.exports = {
+    getCursos
+}

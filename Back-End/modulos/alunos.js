@@ -692,44 +692,199 @@ var alunos = [
         }
     ];
 
-const getAlunos = function(){
-    let listaAlunos = [];
-
-    alunos.forEach(item => {
-        listaAlunos.push(item.nome);
-        erro = false;
-    });
-    if(erro)
-    return false;
-
-    else
-    return (listaAlunos);
-}
- const getCursos = function(nomeAlunos){
-     let nome = nomeAlunos;
-     let alunos = {};
-     let erro = true;
-
-     if(typeof(nome) != 'undefined')
-
-     if(alunos != '' && alunos.lenght == 2)
-        {
-            //Percorrer o array de cursos para validar a sigla
-            alunos.forEach(item => {
-                
-                //Localiza a sigla do curso dentro do array 
-                item.alunos.forEach(itemAunos => {
-                    listaAlunos.push(itemAunos.nome)
-                    erro = false;
-                })
-            })
+    const getAlunos = () => {
+        let listaAlunos = [];
+        let error = true;
+    
+        alunos.forEach(item => {
+            listaAlunos.push(item);
+            error = false;
+        })
+    
+        if (error) {
+            return false;
+        } else {
+            return listaAlunos;
         }
+    }
+    
+    const getAlunosByCurso = (nomeCurso) => {
+        let listaAlunos = [];
+        let error = true;
+        
+        alunos.forEach(item => {
+            item.curso.forEach(itemCurso => {
+                if (nomeCurso.toLowerCase() == itemCurso.sigla.toLocaleLowerCase()) {
+                    listaAlunos.push(item);
+                    error = false;
+                }
+            });
+        });
+    
+        if (error) {
+            return false;
+        } else {
+            return listaAlunos;
+        }
+    }
+    
+    const getAluno = () => {
+        let alunos = {};
+        let erro = true;
+    
+        alunos.forEach(item => {
+                // alunos.name = item.nome;
+                // alunos.photo = item.foto;
+                // alunos.sex = item.sexo;
+                // alunos.enrollment = item.matricula;
+                // alunos.status = item.status;
+                // alunos.course = item.curso;
+                alunos.push(item);
+                erro = false;
+        });
+    
+        if (erro) {
+            return false;
+        } else {
+            return alunos;
+        }
+    }
+    
+    const getSubjects = (alunos) => {
+        let subjects = [];
+        let error = true
+    
+        alunos.curso.forEach(item => {
+            item.disciplinas.forEach(subjectItem => {
+                subjects.push(subjectItem);
+                error = false
+            });
+        });
+    
+        if (error) {
+            return false;
+        } else {
+            return subjects;
+        }
+    }
+    
+    const getAlunosByStatus = (alunosStatus) => {
+        let status = alunosStatus.toLowerCase();
+        let listaAlunos = [];
+        let error = true;
+    
+        alunos.forEach(item => {
+            if (status == item.status.toLowerCase()) {
+                listaAlunos.push(item);
+                error = false;
+            }
+        });
+    
+        if (error) {
+            return false;
+        } else {
+            return listaAlunos;
+        }
+    }
+    
+    const filtrarAlunosByStatus = (alunosArray, alunosStatus) => {
+        let status = alunosStatus.toLowerCase();
+        let listaAlunos = alunosArray;
+        let filtrarArray = [];
+        let error = true;
+    
+        if (status == 'status') {
+            return listaAlunos;
+        }
+        listaAlunos.forEach(item => {
+            if (item.status.toLowerCase() == status) {
+                filtrarArray.push(item);
+                error = false;
+            }
+        });
+    
+        if (error) {
+            return false;
+        } else {
+            return filtrarArray;
+        }
+    }
+    
+    const getConcluidos = (cursoInicial) => {
+        let anos = [];
+        let cursos = cursoInicial.toLowerCase();
+        let error = true;
+        
+        alunos.forEach(item => {
+            item.curso.forEach(itemCurso => {
+                if (cursos == itemCurso.sigla.toLowerCase()) {
+                    anos.push(itemCurso.conclusao);
+                    error = false;
+                }
+            });
+        });
+    
+        if (error) {
+            return false;
+        } else {
+            return anos;
+        }
+    }
+    
+    const getAlunosByConclusao = (anos) => {
+        let conclusao = anos;
+        let listaAlunos= [];
+        let error = true;
+        
+        alunos.forEach(item => {
+            item.curso.forEach(itemCurso => {
+                if (conclusao == itemCurso.conclusao) {
+                    listaAlunos.push(item);
+                    error = false;
+                }
+            });
+        });
+    
+        if (error) {
+            return false;
+        } else {
+            return listaAlunos;
+        }
+    }
+    
+    const filtrarAlunoByConclusao = (alunosArray, anos) => {
+        let conclusao = anos;
+        let listaAlunos = alunosArray;
+        let filtrarArray = [];
+        let error = true;
+    
+        listaAlunos.forEach(item => {
+            item.curso.forEach(itemCurso => {
+                if (itemCurso.conclusao == conclusao) {
+                    filtrarArray.push(item);
+                    error = false;
+                }
+            });
+        });
+    
+        if (error) {
+            return false;
+        } else {
+            return filtrarArray;
+        }
+    }
+    
+console.log(getAluno())
 
-        if(erro)
-        return false;
 
-        else
-        return listaAlunos
- }
- 
- console.table(getAlunos(''))
+// module.exports = {
+//         getAlunos,
+//         getAlunosByCurso,
+//         getSubjects,
+//         getAluno,
+//         getAlunosByStatus,
+//         getAlunosByConclusao,
+//         filtrarAlunosByStatus,
+//         filtrarAlunoByConclusao,
+//         getConcluidos
+//     }

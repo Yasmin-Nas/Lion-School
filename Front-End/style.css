@@ -25,7 +25,7 @@ header{
 
 main{
     padding-left: 100px;
-    height: 68vh;
+    height: 71vh;
     justify-content: space-around;
 }
 
@@ -70,7 +70,7 @@ span{
 
 .cards{
     background-color: #3347B0;
-    height: 30vh;
+    height: 20vh;
     width: 30vh;
     font-family:'Roboto', sans-serif;
     font-weight: 300px;
@@ -78,13 +78,15 @@ span{
     text-align: center;
     color: #FFF;
     padding-top: 40px;
+    border: 1px solid #000000;
+    box-shadow: 12px 12px 4px rgba(51, 71, 176, 0.5);
 }
 
 
 .DS{
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-end;
     width: 150px;
     height:100px;
     padding-left: 12px;
@@ -94,7 +96,7 @@ span{
 .Redes{
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-end;
     width: 150px;
     height:90px;
     padding-top: 20px;
@@ -102,34 +104,67 @@ span{
     padding-right: 20px;
 }
 
-.footer{
-    padding-left: 50px;
-    font-family: 'Roboto', sans-serif;
-    color: #FFF;
-    height: 13vh;
+footer {
     background-color: #3347B0;
+    font-family: 'Roboto', sans-serif;
+    height: 140px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 96px;
+    color: #fff;
 }
 
-.links-container{
+.exit-button {
+    font-size: 2em;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links-container i {
+    font-size: 1.3rem;
+}
+
+.info {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.info span{
     color: #FFF;
-    padding-top: 25px;
-    flex-direction: column ; 
 }
 
-.email{
-    padding-top: 15px;
+.copyright-tag{
+    color: #FFF;
+    align-items: center;
 }
 
-.local{
-    padding-top: 10px;
-} 
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
-.copyright{
-    text-align: center;
-   
+.icon {
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    font-size: 1.2rem;
 }
 
 
