@@ -729,24 +729,25 @@ var alunos = [
     }
     
     const getAluno = () => {
-        let alunos = {};
+        let aluno = {};
         let erro = true;
     
-        alunos.forEach(item => {
-                // alunos.name = item.nome;
-                // alunos.photo = item.foto;
-                // alunos.sex = item.sexo;
-                // alunos.enrollment = item.matricula;
-                // alunos.status = item.status;
-                // alunos.course = item.curso;
-                alunos.push(item);
+        alunos.forEach(push => {
+            alunos.push({
+                nome : push.nome,
+                foto : push.foto,
+                sexo : push.sexo,
+                matricula : push.matricula,
+                status : push.status,
+                curso : push.curso 
+            })
                 erro = false;
         });
     
         if (erro) {
             return false;
         } else {
-            return alunos;
+            return aluno;
         }
     }
     
@@ -873,18 +874,15 @@ var alunos = [
             return filtrarArray;
         }
     }
-    
-console.log(getAluno())
 
-
-// module.exports = {
-//         getAlunos,
-//         getAlunosByCurso,
-//         getSubjects,
-//         getAluno,
-//         getAlunosByStatus,
-//         getAlunosByConclusao,
-//         filtrarAlunosByStatus,
-//         filtrarAlunoByConclusao,
-//         getConcluidos
-//     }
+module.exports = {
+        getAlunos,
+        getAlunosByCurso,
+        getSubjects,
+        getAluno,
+        getAlunosByStatus,
+        getAlunosByConclusao,
+        filtrarAlunosByStatus,
+        filtrarAlunoByConclusao,
+        getConcluidos
+    }

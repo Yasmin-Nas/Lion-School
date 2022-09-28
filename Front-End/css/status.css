@@ -22,8 +22,49 @@ header{
     padding: 30px;
 }
 
+.status-container{
+    width: 196,5vh;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    background-color: #BCC2E5;
+}
+
+.status-container p{
+    height: 19px;
+    padding-left: 50px;
+    color: #3347B0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.legenda{
+    padding-right:30px ;
+}
+
+.click{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 145vh;
+}
+
+.ret1{
+    display: flex;
+    align-items: center;
+}
+
+.ret2{
+    display: flex;
+    align-items: center;
+}
+
 main{
-    height: 80vh;
+    height: 75vh;
 }
 
 footer {
@@ -88,5 +129,4 @@ footer {
     border: 2px solid #fff;
     font-size: 1.2rem;
 }
-
 
