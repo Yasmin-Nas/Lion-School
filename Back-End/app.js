@@ -41,19 +41,11 @@ const bodyParser = require('body-parser');
  });
  
  // Endpoint para listar todos os alunos de um curso
- app.get('/alunos/curso/?', cors(), async (request, response, next) => {
-     let curso = request.query.curso;
-     let status = request.query.status;
-     let dataConclusao = request.query.conclusao;
-     
-     let listaAlunos = getAlunosByCurso(curso);
-     if (status != undefined) {
-         listaAlunos = await filtrarAlunosByStatus(listaAlunos, status);
-     }
-     if (dataConclusao != undefined) {
-         listaAlunos = await filtrarAlunoByConclusao(listaAlunos, dataConclusao);
-     }
- 
+ app.get('/alunos/:curso', cors(), async (request, response, next) => {
+   let chave = request.params.curso
+   let listaAlunos = getAlunosByCurso(chave)
+
+
      if (listaAlunos) {
          response.status(200);
          response.json(listaAlunos);
@@ -128,6 +120,6 @@ const bodyParser = require('body-parser');
      }
  });
  
- app.listen(3030, function() {
+ app.listen(8080, function() {
      console.log('Servidor aguardando requisicoes');
  });

@@ -709,13 +709,19 @@ var alunos = [
     }
     
     const getAlunosByCurso = (nomeCurso) => {
+        let name = nomeCurso
         let listaAlunos = [];
         let error = true;
         
         alunos.forEach(item => {
             item.curso.forEach(itemCurso => {
-                if (nomeCurso.toLowerCase() == itemCurso.sigla.toLocaleLowerCase()) {
-                    listaAlunos.push(item);
+                if (itemCurso.sigla == name) {
+                    listaAlunos.push({
+                        nome: item.nome,
+                        foto: item.foto,
+                        curso: itemCurso.sigla
+                    }
+                        );
                     error = false;
                 }
             });
@@ -727,12 +733,14 @@ var alunos = [
             return listaAlunos;
         }
     }
+
     
-    const getAluno = () => {
+    
+    const getAluno = (alunos) => {
         let aluno = {};
         let erro = true;
     
-        alunos.forEach(push => {
+        alunos.push(push => {
             alunos.push({
                 nome : push.nome,
                 foto : push.foto,
@@ -770,12 +778,12 @@ var alunos = [
     }
     
     const getAlunosByStatus = (alunosStatus) => {
-        let status = alunosStatus.toLowerCase();
+        let status = alunosStatus;
         let listaAlunos = [];
         let error = true;
     
         alunos.forEach(item => {
-            if (status == item.status.toLowerCase()) {
+            if (status == item.status) {
                 listaAlunos.push(item);
                 error = false;
             }
@@ -813,14 +821,21 @@ var alunos = [
     
     const getConcluidos = (cursoInicial) => {
         let anos = [];
-        let cursos = cursoInicial.toLowerCase();
+        let curso = cursoInicial
         let error = true;
         
         alunos.forEach(item => {
             item.curso.forEach(itemCurso => {
-                if (cursos == itemCurso.sigla.toLowerCase()) {
-                    anos.push(itemCurso.conclusao);
+                if (itemCurso.conclusao == curso) {
                     error = false;
+                    anos.push({
+
+                    
+                        nome: item.nome,
+                        conclusao: itemCurso.conclusao
+                    }
+                        );
+                    
                 }
             });
         });
@@ -852,7 +867,7 @@ var alunos = [
             return listaAlunos;
         }
     }
-    
+
     const filtrarAlunoByConclusao = (alunosArray, anos) => {
         let conclusao = anos;
         let listaAlunos = alunosArray;

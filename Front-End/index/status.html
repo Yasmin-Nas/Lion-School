@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/status.css">
     <script src="https://kit.fontawesome.com/324b71f187.js" crossorigin="anonymous"></script>
     <script src="./app.js" defer></script>
-    <title>Lion School</title>
+    <title>Status</title>
 </head>
-
 <body>
     <header>
         <div class="content-container">
             <img src="./img/logo.png" alt="logo-school"></img>
-            <a href="./index/status.html">
-                <img class="sair-img" src="./img/sair.png" alt="img-sair"></img>
-            </a>
+            <a href="./index.html">        
+            <img class="voltar-img" src="./img/voltar.png" alt="img-voltar"></img>
+        </a>    
+    </div>
+    <div class="status-container">
+        <div class="click">
+            <p class="status">Status</p>
         </div>
+        <div class="legenda">
+        <p class="Text1">LEGENDA</p>
+        </div>
+        <div class="ret1">
+        <img src="./img/Retangulo1.png"></img>
+        <p class="Text2">Cursando</p>
+    </div>
+        <div class="ret2">
+        <img src="./img/Retangulo2.png"></img>
+        <p class="Text3">Finalizado</p>
+    </div>
+    </div>
     </header>
     <main>
-        <div class="text-container">
-            <div class="text-container1">
-        <p class="text1">Escolha um
-        <span class="text2">curso</span>
-    </p>
-        <p class="text3">para gerenciar</p>
-    </div>
-    </div>
-        <img class="computer" src="./img/computer.png" alt="dispositivos moveis"><img>
-    </div>
-        <img class="studant" src="./img/studant.png" alt="estudante"></img>
+        <h1></h1>
+        <div class="alunos">
+            <div class="aluno" id="alunos"></div>
         </div>
-       <div class="cards">
-        <div class="DS">
-            <img class="DS" src="./img/DS.png" alt="DS alunos"></img>
-            <h2>DS</h2>
-        </div>
-        <div class="Redes">
-            <img class="Redes" src="./img/Redes.png" alt="Redes alunos"></img>
-            <h2>Redes</h2>
-        </div>
-       </div>
     </main>
     <footer>
         <div class="links-container">
@@ -71,5 +64,4 @@
         </div>
     </footer>
 </body>
-
 </html>
